@@ -59,9 +59,10 @@ ul.task-list input[type="checkbox"] {
   width: 100%;
 
   .more-info {
-    margin-bottom: 5px;
-    margin-top: 5px;
-    font-family: monospace;
+    margin-bottom: 0px;
+    margin-top: -5px;
+    font-family: inherit;
+    font-size: 0.85rem;
 
     p {
       display: inline-block;
@@ -72,6 +73,8 @@ ul.task-list input[type="checkbox"] {
 
 .profile.float-right {
   margin-left: 1rem;
+  margin-top: 0.5rem;   // 上方间距
+  // margin-bottom: 1rem;  // 下方间距
 }
 
 .profile.float-left {
@@ -80,7 +83,7 @@ ul.task-list input[type="checkbox"] {
 
 @media (min-width: 576px) {
   .profile {
-    width: 30%;
+    width: 35%;
 
     .address {
       p {
@@ -212,6 +215,76 @@ ul.task-list input[type="checkbox"] {
 
   .contact-note {
     font-size: 0.8rem;
+    margin-top: 2.5rem;      // 往下拉，与上方内容拉开距离
+    margin-bottom: -3.5rem;       // 缩短到页面底部的距离
+  }
+}
+
+// Profile social icons (图标在上，文字在下)
+.profile-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  justify-content: center;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--global-text-color);
+    transition: color 0.2s ease-in-out;
+    font-size: 1.5rem;
+
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    span {
+      font-size: 0.7rem;
+      margin-top: 0.2rem;
+    }
+
+    &:hover {
+      color: var(--global-theme-color);
+      text-decoration: none;
+    }
+
+    .custom-icon-wrapper {
+      position: relative;
+      width: 1.5rem;
+      height: 1.5rem;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        transition: opacity 0.6s ease-in-out;
+      }
+
+      .icon-light {
+        opacity: 1;
+      }
+
+      .icon-dark {
+        opacity: 0;
+      }
+    }
+  }
+}
+// 暗色主题：替换现有的 html[data-theme="dark"] 块
+html[data-theme="dark"] {
+  .profile-social a .custom-icon-wrapper {
+    .icon-light {
+      opacity: 0;
+    }
+    .icon-dark {
+      opacity: 1;
+    }
   }
 }
 

@@ -2,16 +2,46 @@
 layout: default
 ---
 <div class="post">
-  <header class="post-header">
+  <header class="post-header" style="text-align: center; margin-bottom: 2.0rem; margin-top: -1.1rem;">
     <h1 class="post-title">
       {% if site.title == 'blank' %}
         <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
+        <span class="font-weight-bold">{{ site.last_name }}</span>
+        <span style="margin-left: 0.5em; font-size: 0.90em;" class="font-weight-bold">蒋怀德</span>
       {% else %}
         {{ site.title }}
       {% endif %}
     </h1>
-    <p class="desc">{{ page.subtitle }}</p>
+
+    <p class="desc" style="margin-top: 1.0rem;">{{ page.subtitle }}</p>
+
+    {% if page.social %}
+      <div class="profile-social">
+        <a href="mailto:{{ site.data.socials.email }}" title="Email">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Email</span>
+        </a>
+        <a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" target="_blank" title="Google Scholar">
+          <i class="ai ai-google-scholar"></i>
+          <span>Scholar</span>
+        </a>
+        <a href="https://www.linkedin.com/in/{{ site.data.socials.linkedin_username }}" target="_blank" title="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/{{ site.data.socials.github_username }}" target="_blank" title="GitHub">
+          <i class="fa-brands fa-github"></i>
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.xiaohongshu.com/..." target="_blank" title="RedNote">
+          <div class="custom-icon-wrapper">
+            <img class="icon-light" src="{{ '/assets/img/RedNote-light.png' | relative_url }}" alt="RedNote">
+            <img class="icon-dark" src="{{ '/assets/img/RedNote-dark.png' | relative_url }}" alt="RedNote">
+          </div>
+          <span>RedNote</span>
+        </a>
+      </div>
+    {% endif %}
   </header>
 
   <article>
@@ -64,11 +94,8 @@ layout: default
       {% include selected_papers.liquid %}
     {% endif %}
 
-    <!-- Social -->
-    {% if page.social %}
+    {% if site.contact_note %}
       <div class="social">
-        <div class="contact-icons">{% social_links %}</div>
-
         <div class="contact-note">{{ site.contact_note }}</div>
       </div>
     {% endif %}
