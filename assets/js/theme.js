@@ -303,6 +303,10 @@ let determineComputedTheme = () => {
 let initTheme = () => {
   let themeSetting = determineThemeSetting();
 
+  if (themeSetting === "system") {
+    themeSetting = determineComputedTheme();
+  }
+
   setThemeSetting(themeSetting);
 
   // Add event listener to the theme toggle button.
