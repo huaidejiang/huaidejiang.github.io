@@ -58,11 +58,7 @@
 } /* Generic.Emph */
 .highlight .gr {
   color: #d22323;
-} /* Generic.Error */
-.highlight .gh {
-  color: #ffffff;
-  font-weight: bold;
-} /* Generic.Heading */
+} /* Generic.Error */ /* Generic.Heading */
 .highlight .gi {
   color: #589819;
 } /* Generic.Inserted */

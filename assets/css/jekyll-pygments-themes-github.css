@@ -43,10 +43,7 @@
 } /* Generic.Emph */
 .highlight .gr {
   color: #aa0000;
-} /* Generic.Error */
-.highlight .gh {
-  color: #999999;
-} /* Generic.Heading */
+} /* Generic.Error */ /* Generic.Heading */
 .highlight .gi {
   color: #000000;
   background-color: #ddffdd;
