@@ -23,62 +23,62 @@ nav_order: 4
         <div class="carousel-inner" style="border-radius: 8px; background: var(--global-bg-color);">
           <div class="carousel-item active" style="aspect-ratio: 4/3;">
             <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-              <img src="/assets/img/piano/1.png" alt="Piano 1" style="max-width:100%;max-height:100%;object-fit:contain;">
+              <img src="/assets/img/piano/1.webp" alt="Piano 1" style="max-width:100%;max-height:100%;object-fit:contain;">
             </div>
           </div>
           <div class="carousel-item" style="aspect-ratio: 4/3;">
             <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-              <img src="/assets/img/piano/2.png" alt="Piano 2" style="max-width:100%;max-height:100%;object-fit:contain;">
+              <img src="/assets/img/piano/2.webp" alt="Piano 2" style="max-width:100%;max-height:100%;object-fit:contain;">
             </div>
           </div>
           <div class="carousel-item" style="aspect-ratio: 4/3;">
             <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-              <img src="/assets/img/piano/3.png" alt="Piano 3" style="max-width:100%;max-height:100%;object-fit:contain;">
+              <img src="/assets/img/piano/3.webp" alt="Piano 3" style="max-width:100%;max-height:100%;object-fit:contain;">
             </div>
           </div>
           <div class="carousel-item" style="aspect-ratio: 4/3;">
             <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-              <img src="/assets/img/piano/4.png" alt="Piano 4" style="max-width:100%;max-height:100%;object-fit:contain;">
+              <img src="/assets/img/piano/4.webp" alt="Piano 4" style="max-width:100%;max-height:100%;object-fit:contain;">
             </div>
           </div>
           <div class="carousel-item" style="aspect-ratio: 4/3;">
             <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-              <img src="/assets/img/piano/5.png" alt="Piano 5" style="max-width:100%;max-height:100%;object-fit:contain;">
+              <img src="/assets/img/piano/5.webp" alt="Piano 5" style="max-width:100%;max-height:100%;object-fit:contain;">
             </div>
           </div>
           <div class="carousel-item" style="aspect-ratio: 4/3;">
             <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-              <img src="/assets/img/piano/6.png" alt="Piano 6" style="max-width:100%;max-height:100%;object-fit:contain;">
+              <img src="/assets/img/piano/6.webp" alt="Piano 6" style="max-width:100%;max-height:100%;object-fit:contain;">
             </div>
           </div>
           <div class="carousel-item" style="aspect-ratio: 4/3;">
             <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-              <img src="/assets/img/piano/7.png" alt="Piano 7" style="max-width:100%;max-height:100%;object-fit:contain;">
+              <img src="/assets/img/piano/7.webp" alt="Piano 7" style="max-width:100%;max-height:100%;object-fit:contain;">
             </div>
           </div>
           <div class="carousel-item" style="aspect-ratio: 4/3;">
             <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-              <img src="/assets/img/piano/8.png" alt="Piano 8" style="max-width:100%;max-height:100%;object-fit:contain;">
+              <img src="/assets/img/piano/8.webp" alt="Piano 8" style="max-width:100%;max-height:100%;object-fit:contain;">
             </div>
           </div>
           <div class="carousel-item" style="aspect-ratio: 4/3;">
             <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-              <img src="/assets/img/piano/9.png" alt="Piano 9" style="max-width:100%;max-height:100%;object-fit:contain;">
+              <img src="/assets/img/piano/9.webp" alt="Piano 9" style="max-width:100%;max-height:100%;object-fit:contain;">
             </div>
           </div>
           <div class="carousel-item" style="aspect-ratio: 4/3;">
             <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-              <img src="/assets/img/piano/10.png" alt="Piano 10" style="max-width:100%;max-height:100%;object-fit:contain;">
+              <img src="/assets/img/piano/10.webp" alt="Piano 10" style="max-width:100%;max-height:100%;object-fit:contain;">
             </div>
           </div>
           <div class="carousel-item" style="aspect-ratio: 4/3;">
             <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-              <img src="/assets/img/piano/11.png" alt="Piano 11" style="max-width:100%;max-height:100%;object-fit:contain;">
+              <img src="/assets/img/piano/11.webp" alt="Piano 11" style="max-width:100%;max-height:100%;object-fit:contain;">
             </div>
           </div>
           <div class="carousel-item" style="aspect-ratio: 4/3;">
             <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-              <img src="/assets/img/piano/12.png" alt="Piano 12" style="max-width:100%;max-height:100%;object-fit:contain;">
+              <img src="/assets/img/piano/12.webp" alt="Piano 12" style="max-width:100%;max-height:100%;object-fit:contain;">
             </div>
           </div>
         </div>

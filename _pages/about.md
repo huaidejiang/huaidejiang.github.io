@@ -6,7 +6,7 @@ subtitle: Senior Undergraduate at <a href='https://www.sustech.edu.cn/'>SUSTech<
 
 profile:
   align: right
-  image: my_picture.png
+  image: my_picture.webp
   image_circular: false # crops the image to make it circular
   more_info: >
     Shot at the Banff National Park, Canada in 2026.
