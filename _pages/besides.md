@@ -141,3 +141,5 @@ Currently, I dedicate one hour every day to practicing. My current repertoire in
 - Lisan Wang: *Impressions of Paintings by Higashiyama Kaii* - IV. The Sound of Waves
 
 I also do some visual novel development (in Ren'Py) for fun!
+
+In addition, I enjoy talking with different people from all backgrounds. Feel free to reach out for an online chat for anything (Academics, personal career, or just casual chat about daily life!)
