@@ -7,6 +7,20 @@ nav_order: 3
 ---
 
 <div style="display: flex; align-items: flex-start; gap: 20px; margin-bottom: 1rem;">
+  <img src="/assets/img/northwestern_logo.png" alt="Northwestern" style="width: 60px; height: auto; margin-top: 4px;">
+  <div style="flex: 1;">
+    <span style="font-weight: 600;">Northwestern University</span> <span style="float: right; font-weight: 600;">IL, U.S.</span>
+    <br>
+    Computer Science Department <span style="float: right;">Sept. 2026 - 2028 (expected)</span>
+    <br><br>
+    <span style="font-weight: 600;">Master of Science in Computer Science</span>
+    <br>
+  </div>
+</div>
+
+---
+
+<div style="display: flex; align-items: flex-start; gap: 20px; margin-bottom: 1rem;">
   <img src="/assets/img/sustech_logo.png" alt="SUSTech" style="width: 60px; height: auto; margin-top: 4px;">
   <div style="flex: 1;">
     <span style="font-weight: 600;">Southern University of Science and Technology (SUSTech)</span> <span style="float: right; font-weight: 600;">Shenzhen, China</span>

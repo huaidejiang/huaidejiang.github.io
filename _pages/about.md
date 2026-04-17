@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Senior Undergraduate at <a href='https://www.sustech.edu.cn/'>SUSTech</a>.
+subtitle: Incoming MSCS student at <a href='https://www.northwestern.edu/'>Northwestern</a>
 
 profile:
   align: right
@@ -25,8 +25,6 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hello👋! I am Huaide Jiang, a fourth-year undergraduate student at the [Southern University of Science and Technology (SUSTech)](https://www.sustech.edu.cn/). My research interests lie in human-centered AI and robotic, particularly on the vision side - including modeling and understanding user behavior, and improving how people interact with AI/robotic systems.
+Hello👋! I am Huaide Jiang, a fourth-year undergraduate student at the [Southern University of Science and Technology (SUSTech)](https://www.sustech.edu.cn/), and I will join the [Northwestern University](https://www.northwestern.edu/) as a MSCS student in Fall 2026. My research interests lie in human-centered AI and robotic, particularly on the vision side - including modeling and understanding user behavior, and improving how people interact with AI/robotic systems.
 
 Previously, I spent seven fulfilling months at the [Trustworthy Autonomous Systems Laboratory](https://tasl.ucr.edu/) at the [University of California, Riverside](https://www.ucr.edu/), advised by [Prof. Jiachen Li](https://jiachenli94.github.io/). During that time, I worked primarily on personalized driving and robotic vision. My undergraduate advisor is [Prof. Yepang Liu](https://yepangliu.github.io/).
-
-<span style="color: #ff006a;">I am actively seeking research internship opportunities in human-centered AI/Robotics. Feel free to reach out!</span>
