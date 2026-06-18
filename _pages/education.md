@@ -31,7 +31,7 @@ nav_order: 3
     <br>
     <span style="font-weight: 600;">Current GPA: 3.89/4.00, Ranking 14/167</span>
     <br><br>
-    <span style="font-weight: 600; color: #ff006a;">🏅 First-Class Scholarship of SUSTech in 2023, 2024 and 2025</span>
+    <span style="font-weight: 600; color: #ff006a;">🏅 Outstanding Undergraduate Graduates of SUSTech</span>
   </div>
 </div>
 

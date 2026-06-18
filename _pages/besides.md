@@ -71,16 +71,6 @@ nav_order: 4
               <img src="/assets/img/piano/10.webp" alt="Piano 10" style="max-width:100%;max-height:100%;object-fit:contain;">
             </div>
           </div>
-          <div class="carousel-item" style="aspect-ratio: 4/3;">
-            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-              <img src="/assets/img/piano/11.webp" alt="Piano 11" style="max-width:100%;max-height:100%;object-fit:contain;">
-            </div>
-          </div>
-          <div class="carousel-item" style="aspect-ratio: 4/3;">
-            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-              <img src="/assets/img/piano/12.webp" alt="Piano 12" style="max-width:100%;max-height:100%;object-fit:contain;">
-            </div>
-          </div>
         </div>
       </div>
 
@@ -104,8 +94,6 @@ nav_order: 4
       <li data-target="#pianoCarousel" data-slide-to="7" style="background-color: var(--global-text-color); width: 10px; height: 10px; border-radius: 50%;"></li>
       <li data-target="#pianoCarousel" data-slide-to="8" style="background-color: var(--global-text-color); width: 10px; height: 10px; border-radius: 50%;"></li>
       <li data-target="#pianoCarousel" data-slide-to="9" style="background-color: var(--global-text-color); width: 10px; height: 10px; border-radius: 50%;"></li>
-      <li data-target="#pianoCarousel" data-slide-to="10" style="background-color: var(--global-text-color); width: 10px; height: 10px; border-radius: 50%;"></li>
-      <li data-target="#pianoCarousel" data-slide-to="11" style="background-color: var(--global-text-color); width: 10px; height: 10px; border-radius: 50%;"></li>
     </ol>
 
   </div>
@@ -125,20 +113,21 @@ I never identify myself as a "pure CS student." I'm a bit "artistic" - reflected
 
 I'm an amateur pianist who started my journey at the age of 7. I once dreamed of becoming a professional pianist, but after failing to get into the Music Middle School Affiliated to the Shanghai Conservatory of Music, I let go of that dream and ended up in STEM. Despite the frustration, my love for piano has never faded. I have performed at many concerts both on and off campus. For me, piano is not merely a hobby - it's a way of life. My ultimate dream is to perform Rachmaninoff's 3rd Piano Concerto - one of the most demanding masterpieces in the repertoire - with a professional orchestra!
 
-**Representative Concerts:**
-- 11th Shenzhen Piano Festival, Concert of Social Art Education Achievements, 2023
-- Shenzhen Concert Hall Steinway Garden Concert, 2024
-- Shenzhen Concert Hall "Music Afternoon Tea" Concert, 2024
-- Midsummer Concert of SUSTech, 2025 - Performed Beethoven's Third Movement of the Triple Concerto with a string orchestra!
-
 **Prizes:**
+- 4th Place, 2026 The Ninth Kawai Asia Piano Competetion (Preliminary in Shenzhen, 1st to 3rd places were vacant)
 - 5th Place, 2025 Shenzhen Piano Open Competition (1st and 2nd places were vacant)
 - First Prize, Art Festival of Wenzhou, 2021
 
+**Representative Concerts:**
+- Midsummer Concert of SUSTech, 2025 - Performed Beethoven's Third Movement of the Triple Concerto with a string orchestra!
+- 11th Shenzhen Piano Festival, Concert of Social Art Education Achievements, 2023
+- Shenzhen Concert Hall Steinway Garden Concert, 2024
+- Shenzhen Concert Hall "Music Afternoon Tea" Concert, 2024
+
 Currently, I dedicate one hour every day to practicing. My current repertoire in progress:
+- Edvard Grieg: *Piano Concerto in A minor* - I. Allegro molto moderato
+- Wang Li-San: *Impressions of Paintings by Higashiyama Kaii* - IV. The Sound of Waves
 - Frédéric Chopin: *Andante spianato et Grande polonaise brillante*, Op. 22
-- Sergei Rachmaninoff: *Piano Sonata No. 2*, Op. 36 - III. Allegro molto (1913 ver.)
-- Lisan Wang: *Impressions of Paintings by Higashiyama Kaii* - IV. The Sound of Waves
 
 I also do some visual novel development (in Ren'Py) for fun!
 
