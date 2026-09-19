@@ -35,7 +35,7 @@ ninja.data = [{
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%31%32%32%31%32%39%31%35@%6D%61%69%6C.%73%75%73%74%65%63%68.%65%64%75.%63%6E", "_blank");
+          window.open("mailto:%68%75%61%69%64%65%6A%69%61%6E%67%32%30%32%38@%75.%6E%6F%72%74%68%77%65%73%74%65%72%6E.%65%64%75", "_blank");
         },
       },{
         id: 'social-scholar',
