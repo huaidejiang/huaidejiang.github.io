@@ -1,0 +1,782 @@
+/*******************************************************************************
+ * Site-specific design refinements (loaded last, overrides the theme defaults)
+ *
+ * Everything here is purely presentational: tokens, typography rhythm, the
+ * navigation bar, the About header, the Education timeline, the Publications
+ * list and the piano gallery on the "Besides Research" page.
+ ******************************************************************************/
+
+/* ---------------------------------------------------------------------------
+ * Design tokens (light / dark)
+ * ------------------------------------------------------------------------- */
+
+:root {
+  --site-accent-rgb: 124, 58, 237; // #7c3aed
+  --site-surface: #ffffff;
+  --site-surface-logo: #fbfaf8;
+  --site-border: rgba(44, 42, 53, 0.1);
+  --site-border-strong: rgba(44, 42, 53, 0.18);
+  --site-muted: #6f6c7a;
+  --site-nav-bg: rgba(250, 249, 247, 0.78);
+  --site-glow: rgba(124, 58, 237, 0.07);
+  --site-shadow-sm: 0 1px 2px rgba(28, 25, 38, 0.05), 0 4px 12px rgba(28, 25, 38, 0.06);
+  --site-shadow-md: 0 2px 4px rgba(28, 25, 38, 0.05), 0 14px 36px -10px rgba(28, 25, 38, 0.16);
+}
+
+html[data-theme="dark"] {
+  --site-accent-rgb: 45, 212, 191; // #2dd4bf
+  --site-surface: #1c1b22;
+  --site-surface-logo: #f4f3ef;
+  --site-border: rgba(228, 225, 237, 0.1);
+  --site-border-strong: rgba(228, 225, 237, 0.2);
+  --site-muted: #9d9aab;
+  --site-nav-bg: rgba(20, 19, 24, 0.72);
+  --site-glow: rgba(45, 212, 191, 0.08);
+  --site-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35), 0 4px 12px rgba(0, 0, 0, 0.35);
+  --site-shadow-md: 0 2px 4px rgba(0, 0, 0, 0.4), 0 14px 36px -10px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------------------------------------------------------------------------
+ * Base: rendering, rhythm, selection, focus, links
+ * ------------------------------------------------------------------------- */
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  line-height: 1.7;
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "calt" 1;
+}
+
+// A very faint accent glow at the top of every page (blurred by the navbar).
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55vh;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(70% 60% at 50% -10%, var(--site-glow), transparent 70%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: rgba(var(--site-accent-rgb), 0.18);
+}
+
+:focus-visible {
+  outline: 2px solid rgba(var(--site-accent-rgb), 0.6);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+a {
+  transition:
+    color 0.18s ease,
+    text-decoration-color 0.18s ease,
+    border-color 0.18s ease,
+    background-color 0.18s ease;
+  text-underline-offset: 0.16em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-color: rgba(var(--site-accent-rgb), 0.55);
+}
+
+/* ---------------------------------------------------------------------------
+ * Navigation bar
+ * ------------------------------------------------------------------------- */
+
+.navbar {
+  opacity: 1;
+  background-color: var(--site-nav-bg);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid var(--site-border);
+}
+
+.navbar.navbar-light {
+  .navbar-brand.title {
+    letter-spacing: -0.01em;
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    transition: color 0.18s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0.7rem;
+      right: 0.7rem;
+      bottom: 0.3rem;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--global-theme-color);
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
+  }
+
+  .navbar-nav .nav-item.active > .nav-link::after {
+    transform: scaleX(1);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .navbar.navbar-light .navbar-nav .nav-item .nav-link::after {
+    display: none;
+  }
+}
+
+#light-toggle {
+  transition: color 0.18s ease;
+}
+
+/* ---------------------------------------------------------------------------
+ * Page headers (Publications / Education / Besides)
+ * ------------------------------------------------------------------------- */
+
+.post > .post-header {
+  margin-bottom: 2.25rem;
+}
+
+// Page titles (Publications / Education / Besides): clamp(min on phones, fluid, max on desktop)
+.post-title {
+  font-size: clamp(1.85rem, 1.2rem + 2vw, 2.4rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.post .post-header:not(.about-header) .post-title::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  border-radius: 2px;
+  margin: 1.1rem auto 0;
+  background: var(--global-theme-color);
+  opacity: 0.85;
+}
+
+.post-description:empty {
+  display: none;
+}
+
+// Subtle entrance for the main content (disabled for reduced-motion users).
+@media (prefers-reduced-motion: no-preference) {
+  .post {
+    animation: site-fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes site-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * About page
+ * ------------------------------------------------------------------------- */
+
+.about-header {
+  text-align: center;
+  margin: -0.5rem 0 2.25rem;
+
+  // Name on the About page: clamp(min on phones, fluid, max on desktop)
+  .post-title {
+    font-size: clamp(2rem, 1.3rem + 2.2vw, 2.7rem);
+  }
+
+  .name-zh {
+    display: inline-block;
+    margin-left: 0.45em;
+    font-size: 0.88em;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .desc {
+    margin-top: 0.9rem;
+    margin-bottom: 0;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+    color: var(--site-muted);
+  }
+}
+
+.profile-social {
+  gap: 1.6rem;
+  margin-top: 1.5rem;
+
+  a {
+    font-size: 1.35rem;
+    color: var(--global-text-color);
+    transition:
+      color 0.18s ease,
+      transform 0.18s ease;
+
+    // icon fonts and the RedNote bitmap share one box so the labels line up
+    > i,
+    > .custom-icon-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 1.6rem;
+    }
+
+    span {
+      margin-top: 0.4rem;
+      font-size: 0.66rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--site-muted);
+      transition: color 0.18s ease;
+    }
+
+    &:hover {
+      color: var(--global-theme-color);
+      transform: translateY(-2px);
+
+      span {
+        color: var(--global-theme-color);
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .profile-social {
+    gap: 0.85rem 0.9rem;
+
+    a span {
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+    }
+  }
+}
+
+.profile {
+  figure {
+    margin-bottom: 0.7rem;
+  }
+
+  .profile-photo {
+    border-radius: 14px;
+    box-shadow:
+      var(--site-shadow-md),
+      0 0 0 1px var(--site-border);
+  }
+
+  .more-info {
+    margin-top: 0;
+    font-size: 0.8rem;
+    font-style: italic;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: var(--site-muted);
+  }
+}
+
+.profile.float-right {
+  margin-left: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 575.98px) {
+  .profile.float-right,
+  .profile.float-left {
+    margin: 0.25rem 0 1.75rem;
+  }
+}
+
+.social .contact-note {
+  margin-top: 3.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--site-border);
+  font-size: 0.74rem;
+  letter-spacing: 0.01em;
+  color: var(--site-muted);
+
+  a {
+    color: var(--site-muted);
+    text-decoration: underline;
+    text-decoration-color: var(--site-border-strong);
+
+    &:hover {
+      color: var(--global-theme-color);
+      text-decoration-color: currentColor;
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Education & Experience
+ * ------------------------------------------------------------------------- */
+
+.edu-list {
+  margin-top: -0.5rem;
+}
+
+.edu-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.35rem;
+  padding: 1.6rem 0;
+  border-bottom: 1px solid var(--site-border);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.edu-logo {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px;
+  border-radius: 14px;
+  background: var(--site-surface-logo);
+  border: 1px solid var(--site-border);
+  box-shadow: var(--site-shadow-sm);
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+.edu-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.edu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem 1.25rem;
+  flex-wrap: wrap;
+}
+
+.edu-org {
+  font-weight: 600;
+  font-size: 1.08rem;
+}
+
+.edu-meta {
+  color: var(--site-muted);
+  font-size: 0.92rem;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.edu-row:first-child .edu-meta {
+  font-weight: 600;
+}
+
+.edu-detail {
+  margin-top: 0.85rem;
+  line-height: 1.75;
+
+  .edu-degree,
+  .edu-gpa {
+    display: block;
+    font-weight: 600;
+  }
+
+  .edu-line + .edu-line {
+    margin-left: 1.1rem;
+  }
+}
+
+.edu-honor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.8rem;
+  padding: 0.28rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--global-theme-color);
+  background: rgba(var(--site-accent-rgb), 0.1);
+  border: 1px solid rgba(var(--site-accent-rgb), 0.25);
+}
+
+@media (max-width: 575.98px) {
+  .edu-item {
+    gap: 1rem;
+    padding: 1.3rem 0;
+  }
+
+  .edu-logo {
+    flex-basis: 52px;
+    width: 52px;
+    height: 52px;
+    padding: 7px;
+    border-radius: 12px;
+  }
+
+  .edu-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
+  }
+
+  .edu-meta {
+    white-space: normal;
+  }
+
+  .edu-detail .edu-line {
+    display: block;
+
+    + .edu-line {
+      margin-left: 0;
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Publications
+ * ------------------------------------------------------------------------- */
+
+.publications {
+  margin-top: 1rem;
+
+  h2.bibliography {
+    margin: 1.25rem 0 0.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--site-border);
+    text-align: left;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--site-muted);
+  }
+
+  ol.bibliography li {
+    margin-bottom: 0;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--site-border);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    .abbr {
+      margin-bottom: 0.6rem;
+
+      abbr {
+        background-color: rgba(var(--site-accent-rgb), 0.1);
+        color: var(--global-theme-color) !important;
+        border: 1px solid rgba(var(--site-accent-rgb), 0.25);
+        box-shadow: none;
+        margin-bottom: 0.6rem;
+        padding: 0.42em 0.5em;
+        border-radius: 6px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        div,
+        a {
+          color: inherit !important;
+        }
+      }
+    }
+
+    .preview {
+      border-radius: 10px !important;
+      box-shadow:
+        var(--site-shadow-sm),
+        0 0 0 1px var(--site-border) !important;
+    }
+
+    .title {
+      font-weight: 600;
+      font-size: 1.06rem;
+      line-height: 1.4;
+      margin-bottom: 0.3rem;
+    }
+
+    .author {
+      line-height: 1.6;
+
+      > span.more-authors {
+        color: var(--site-muted);
+        border-bottom-color: var(--site-border-strong);
+      }
+    }
+
+    .periodical {
+      margin-top: 0.15rem;
+      font-size: 0.9rem;
+      color: var(--site-muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .links {
+      margin-top: 0.6rem;
+
+      a.btn {
+        margin: 0 0.4rem 0.4rem 0;
+        padding: 0.28rem 0.85rem;
+        border-radius: 999px;
+        border: 1px solid var(--site-border-strong);
+        background: transparent;
+        box-shadow: none;
+        color: var(--site-muted);
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        transition:
+          color 0.18s ease,
+          border-color 0.18s ease,
+          background-color 0.18s ease;
+
+        &:hover {
+          color: var(--global-theme-color);
+          border-color: rgba(var(--site-accent-rgb), 0.55);
+          background: rgba(var(--site-accent-rgb), 0.06);
+        }
+      }
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Besides Research: piano gallery + prose
+ * ------------------------------------------------------------------------- */
+
+.piano-gallery {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.piano-carousel {
+  flex: 1;
+  min-width: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--site-surface);
+  border: 1px solid var(--site-border);
+  box-shadow: var(--site-shadow-md);
+
+  .carousel-inner {
+    border-radius: inherit;
+    background: var(--site-surface);
+  }
+
+  // Horizontal slide between photos. Bootstrap ships this transition but turns it
+  // off when the OS asks for reduced motion (Windows "animation effects" off);
+  // the gallery keeps a gentle slide either way, with a softer ease-out curve.
+  .carousel-item {
+    transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+.piano-slide {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}
+
+.piano-nav {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  color: var(--global-text-color);
+  background: var(--site-surface);
+  border: 1px solid var(--site-border-strong);
+  box-shadow: var(--site-shadow-sm);
+  text-decoration: none !important;
+  transition:
+    color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+
+  &:hover {
+    color: var(--global-theme-color);
+    border-color: rgba(var(--site-accent-rgb), 0.55);
+    transform: translateY(-1px);
+    box-shadow: var(--site-shadow-md);
+  }
+}
+
+.piano-dots {
+  position: static;
+  display: flex;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 1.1rem 0 0;
+  padding: 0;
+
+  li {
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    width: 7px;
+    height: 7px;
+    margin: 0;
+    border: 0;
+    border-radius: 999px;
+    opacity: 1;
+    text-indent: 0;
+    cursor: pointer;
+    background-color: var(--site-border-strong);
+    transition:
+      width 0.25s ease,
+      background-color 0.25s ease;
+
+    &.active {
+      width: 22px;
+      background-color: var(--global-theme-color);
+    }
+  }
+}
+
+// On phones the arrows float over the photo so the frame can use the full width.
+@media (max-width: 575.98px) {
+  .piano-gallery {
+    position: relative;
+    gap: 0;
+  }
+
+  .piano-nav {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    width: 34px;
+    height: 34px;
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.85);
+    transform: translateY(-50%);
+
+    &:hover {
+      transform: translateY(-50%);
+    }
+
+    &[data-slide="prev"] {
+      left: 0.5rem;
+    }
+
+    &[data-slide="next"] {
+      right: 0.5rem;
+    }
+  }
+
+  html[data-theme="dark"] .piano-nav {
+    background: rgba(28, 27, 34, 0.85);
+  }
+
+  .piano-carousel {
+    border-radius: 12px;
+  }
+}
+
+.prose {
+  max-width: 760px;
+  margin: 2.75rem auto 0;
+
+  p {
+    margin-bottom: 1.25rem;
+  }
+
+  h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 2.1rem 0 0.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1rem;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--global-theme-color);
+    }
+  }
+
+  ul {
+    padding-left: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  li {
+    margin-bottom: 0.45rem;
+    padding-left: 0.15rem;
+
+    &::marker {
+      color: rgba(var(--site-accent-rgb), 0.75);
+    }
+  }
+}

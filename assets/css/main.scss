@@ -38,4 +38,7 @@
 @use "font-awesome/solid";
 @use "font-awesome/regular";
 
-@use "custom_fonts"; 
+@use "custom_fonts";
+
+// Site-specific design refinements (must stay last so it overrides the theme)
+@use "custom"; 

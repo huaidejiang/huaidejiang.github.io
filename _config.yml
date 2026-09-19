@@ -9,7 +9,7 @@ last_name: Jiang
 contact_note: >
     Copyright (c) 2026 Huaide Jiang.
     Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-    Last Updated: June 19 2026
+    Last Updated: September 19 2026
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 
@@ -203,6 +203,19 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
+  # site-specific: docs, sources and helper scripts that must not be published
+  - AGENTS.md
+  - ANALYTICS.md
+  - CLAUDE.md
+  - QUICKSTART.md
+  - SEO.md
+  - TROUBLESHOOTING.md
+  - requirements.txt
+  - process_png.py
+  - test_font.py
+  - assets/fonts/SourceHanSerifSC-VF.otf.woff2
+  - assets/fonts/font_subset.py
+  - assets/img/piano/compress_images.py
 keep_files:
   - CNAME
   - .nojekyll
